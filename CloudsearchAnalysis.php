@@ -55,4 +55,3 @@ class CloudsearchAnalysis {
     return $this->client->call($this->path, $params);
   }
 }
-?>
