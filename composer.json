@@ -1,0 +1,14 @@
+{
+    "name": "qycloud/opensearch",
+    "type": "library",
+    "description": "This package contains the OpenSearch PHP library.",
+    "keywords": ["opensearch"],
+    "homepage": "https://github.com/qycloud/opensearch",
+    "license": "MIT",
+    "require": {
+        "php": ">=5.3.0"
+    },
+    "autoload": {
+        "files": [ "CloudsearchClient.php","CloudsearchSearch.php" ]
+    }
+}
