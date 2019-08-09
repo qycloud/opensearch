@@ -311,8 +311,8 @@ class CloudsearchClient {
     $query = '';
     $arg = '';
     if(is_array($params) && !empty($params)){
-      while (list ($key, $val) = each ($params)) {
-        $arg .= $this->_percentEncode($key) . "=" . $this->_percentEncode($val) . "&";
+      foreach ($params as $key => $val) {
+          $arg .= $this->_percentEncode($key) . "=" . $this->_percentEncode($val) . "&";
       }
       $query = substr($arg, 0, count($arg) - 2);
     }
@@ -329,12 +329,12 @@ class CloudsearchClient {
    */
   protected function _params_filter($parameters = array()){
     $params = array();
-    while (list ($key, $val) = each ($parameters)) {
-      if ($key == "Signature" ||$val === "" || $val === NULL){
-        continue;
-      } else {
-        $params[$key] = $parameters[$key];
-      }
+    foreach ($parameters as $key => $val) {
+        if ($key == "Signature" || $val === "" || $val === NULL) {
+            continue;
+        } else {
+            $params[$key] = $parameters[$key];
+        }
     }
     ksort($params);
     reset($params);
